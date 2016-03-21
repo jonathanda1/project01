@@ -13,13 +13,19 @@ function randomColor() {
   }
 }
 
-// $('play').click$(function genSeq())
+$('#play').click(function(e) {
+  // console.log("You clicked play!");
+  var randomSequence = generateRandomSequence(100);
+  console.log(randomSequence);
+});
 
 
 function generateRandomSequence(sequenceLength) {
   var randomSequence = [];
 
-  // ...
+  for (var i = 0; i < sequenceLength; i++) {
+    randomSequence.push(randomColor());
+  }
 
   return randomSequence;
 }

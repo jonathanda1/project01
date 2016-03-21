@@ -1,5 +1,46 @@
 console.log("hi")
 
+var sequenceLength = 5;
+var playerTurn     = 0;
+var randomSequence = [];
+
+$('.squaresGreen').click(function() {
+  blinkGreen(0);
+  console.log("Check if it's the right color!");
+});
+$('.squaresRed').click(blinkRed);
+$('.squaresBlue').click(blinkBlue);
+$('.squaresYellow').click(blinkYellow);
+
+$('#play').click(function(e) {
+  // console.log("You clicked play!");
+  randomSequence = generateRandomSequence(sequenceLength);
+  console.log(randomSequence);
+
+  for (var i = 0; i < randomSequence.length; i++) {
+    var color = randomSequence[i];
+    var pauseTime = (i+1) * 750;
+    if (color === 'green') {
+      blinkGreen(pauseTime);
+    } else if (color === 'red') {
+      blinkRed(pauseTime);
+    } else if (color === 'blue') {
+      blinkBlue(pauseTime);
+    } else if (color === 'yellow') {
+      blinkYellow(pauseTime);
+    }
+  }
+});
+
+
+// FAIL LOGIC
+// playerChoice !== randomSequence[playerTurn]
+
+// WIN LOGIC
+// (playerturn + 1) === randomSequence.length && playerChoice === randomSequence[playerTurn]
+
+///////////////////////////////////////////////////////////////////////
+
 function randomColor() {
   var randomNumber = Math.random();
   if (randomNumber < 0.25) {
@@ -13,13 +54,6 @@ function randomColor() {
   }
 }
 
-$('#play').click(function(e) {
-  // console.log("You clicked play!");
-  var randomSequence = generateRandomSequence(100);
-  console.log(randomSequence);
-});
-
-
 function generateRandomSequence(sequenceLength) {
   var randomSequence = [];
 
@@ -30,45 +64,54 @@ function generateRandomSequence(sequenceLength) {
   return randomSequence;
 }
 
-// PLAYER TURN
-
-var playerSeq = [];
-
-$('.squaresGreen').click(function() {
+function blinkGreen(pauseTime) {
+  // if no pause time is given, we will default to 500ms
+  if (pauseTime == undefined) {
+    pauseTime = 500;
+  }
   setTimeout(function () {
     $('.squaresGreen').addClass('glowGreen');
     setTimeout(function() {
       $('.glowGreen').removeClass('glowGreen');
     }, 500);
-  }, 500);
-});
+  }, pauseTime);
+}
 
-$('.squaresRed').click(function() {
+function blinkRed(pauseTime) {
+  // if no pause time is given, we will default to 500ms
+  if (pauseTime == undefined) {
+    pauseTime = 500;
+  }
   setTimeout(function () {
     $('.squaresRed').addClass('glowRed');
     setTimeout(function() {
       $('.glowRed').removeClass('glowRed');
     }, 500);
-  }, 500);
-});
+  }, pauseTime);
+}
 
-$('.squaresBlue').click(function() {
+function blinkBlue(pauseTime) {
+  // if no pause time is given, we will default to 500ms
+  if (pauseTime == undefined) {
+    pauseTime = 500;
+  }
   setTimeout(function () {
     $('.squaresBlue').addClass('glowBlue');
     setTimeout(function() {
       $('.glowBlue').removeClass('glowBlue');
       }, 500);
-  }, 500);
-});
+  }, pauseTime);
+}
 
-$('.squaresYellow').click(function() {
+function blinkYellow(pauseTime) {
+  // if no pause time is given, we will default to 500ms
+  if (pauseTime == undefined) {
+    pauseTime = 500;
+  }
   setTimeout(function () {
     $('.squaresYellow').addClass('glowYellow');
     setTimeout(function() {
       $('.glowYellow').removeClass('glowYellow');
     }, 500);
-  }, 500);
-});
-
-// WIN LOGIC
-// playerSeq === randomSeq;
+  }, pauseTime);
+}

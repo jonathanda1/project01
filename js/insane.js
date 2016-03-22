@@ -1,45 +1,32 @@
 console.log("hi")
 
-var sequenceLength = 4;
+var sequenceLength = 12;
 var playerTurn     = 0;
 var randomSequence = [];
-var round          = 0;
-/*
+
 $('.squaresGreen').click(function() {
   blinkGreen();
   checkLoss("green");
+  winLogic();
 });
 
 $('.squaresRed').click(function() {
   blinkRed();
   checkLoss("red");
+  winLogic();
 });
 
 $('.squaresBlue').click(function() {
   blinkBlue();
   checkLoss("blue");
+  winLogic();
 });
 
 $('.squaresYellow').click(function() {
   blinkYellow();
   checkLoss("yellow");
+  winLogic();
 });
-*/
-$('#easy').click(function () {
-  window.location.href='easy.html'
-})
-
-$('#medium').click(function () {
-  window.location.href='medium.html'
-})
-
-$('#difficult').click(function () {
-  window.location.href='difficult.html'
-})
-
-$('#insane').click(function () {
-  window.location.href='insane.html'
-})
 
 $('#play').click(function(e) {
   // console.log("You clicked play!");
@@ -58,6 +45,8 @@ $('#play').click(function(e) {
       blinkYellow(pauseTime);
     }
   }
+  setTimeout(function() {
+      alert("Your turn. Ready?"); }, 10000)
 });
 
 ///////////////////////////////////////////////////////////////////////
@@ -65,12 +54,17 @@ function checkLoss (color) {
   if (color === randomSequence[playerTurn]) {
     console.log("correct")
   } else {
-    alert("incorrect")
+    alert("You probably won't get it. Try again?");
+    window.location.reload(true);
   }
   playerTurn++
 }
 
-
+function winLogic () {
+  if (playerTurn === randomSequence.length) {
+    alert("You probably got lucky. You win..")
+  }
+}
 
 function randomColor() {
   var randomNumber = Math.random();
@@ -104,7 +98,7 @@ function blinkGreen(pauseTime) {
     $('.squaresGreen').addClass('glowGreen');
     setTimeout(function() {
       $('.glowGreen').removeClass('glowGreen');
-    }, 750);
+    }, 1000);
   }, pauseTime);
 }
 
@@ -117,7 +111,7 @@ function blinkRed(pauseTime) {
     $('.squaresRed').addClass('glowRed');
     setTimeout(function() {
       $('.glowRed').removeClass('glowRed');
-    }, 750);
+    }, 400);
   }, pauseTime);
 }
 
@@ -143,6 +137,6 @@ function blinkYellow(pauseTime) {
     $('.squaresYellow').addClass('glowYellow');
     setTimeout(function() {
       $('.glowYellow').removeClass('glowYellow');
-    }, 750);
+    }, 400);
   }, pauseTime);
 }

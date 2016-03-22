@@ -1,22 +1,31 @@
 console.log("hi")
 
-var sequenceLength = 5;
+var sequenceLength = 4;
 var playerTurn     = 0;
 var randomSequence = [];
+var playerChoice   = [];
 
 $('.squaresGreen').click(function() {
-  blinkGreen(0);
-  console.log("Check if it's the right color!");
+  blinkGreen();
+  winLogic("green");
 });
-$('.squaresRed').click(blinkRed);
-$('.squaresBlue').click(blinkBlue);
-$('.squaresYellow').click(blinkYellow);
+$('.squaresRed').click(function() {
+  blinkRed();
+  winLogic("red");
+});
+$('.squaresBlue').click(function() {
+  blinkBlue();
+  winLogic("blue");
+});
+$('.squaresYellow').click(function() {
+  blinkYellow();
+  winLogic("yellow");
+});
 
 $('#play').click(function(e) {
   // console.log("You clicked play!");
   randomSequence = generateRandomSequence(sequenceLength);
   console.log(randomSequence);
-
   for (var i = 0; i < randomSequence.length; i++) {
     var color = randomSequence[i];
     var pauseTime = (i+1) * 750;
@@ -32,14 +41,16 @@ $('#play').click(function(e) {
   }
 });
 
-
-// FAIL LOGIC
-// playerChoice !== randomSequence[playerTurn]
-
-// WIN LOGIC
-// (playerturn + 1) === randomSequence.length && playerChoice === randomSequence[playerTurn]
-
 ///////////////////////////////////////////////////////////////////////
+function winLogic (color) {
+  if (color === randomSequence[playerTurn]) {
+    console.log("correct")
+  } else {
+    console.log("incorrect")
+  }
+  playerTurn++
+}
+
 
 function randomColor() {
   var randomNumber = Math.random();
@@ -54,15 +65,15 @@ function randomColor() {
   }
 }
 
+
 function generateRandomSequence(sequenceLength) {
   var randomSequence = [];
-
   for (var i = 0; i < sequenceLength; i++) {
     randomSequence.push(randomColor());
   }
-
-  return randomSequence;
+    return randomSequence;
 }
+
 
 function blinkGreen(pauseTime) {
   // if no pause time is given, we will default to 500ms
@@ -73,7 +84,7 @@ function blinkGreen(pauseTime) {
     $('.squaresGreen').addClass('glowGreen');
     setTimeout(function() {
       $('.glowGreen').removeClass('glowGreen');
-    }, 500);
+    }, 750);
   }, pauseTime);
 }
 
@@ -86,7 +97,7 @@ function blinkRed(pauseTime) {
     $('.squaresRed').addClass('glowRed');
     setTimeout(function() {
       $('.glowRed').removeClass('glowRed');
-    }, 500);
+    }, 750);
   }, pauseTime);
 }
 
@@ -99,7 +110,7 @@ function blinkBlue(pauseTime) {
     $('.squaresBlue').addClass('glowBlue');
     setTimeout(function() {
       $('.glowBlue').removeClass('glowBlue');
-      }, 500);
+      }, 750);
   }, pauseTime);
 }
 
@@ -112,6 +123,6 @@ function blinkYellow(pauseTime) {
     $('.squaresYellow').addClass('glowYellow');
     setTimeout(function() {
       $('.glowYellow').removeClass('glowYellow');
-    }, 500);
+    }, 750);
   }, pauseTime);
 }

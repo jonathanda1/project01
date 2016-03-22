@@ -19,7 +19,7 @@ header {
 .glowGreen {
   height: 200px;
   width: 200px;
-  background-color: #66CD00;
+  background-color: #6FFF00;
   border-top-left-radius: 400px;
   box-shadow: 0px 0px 29px 12px;
 }
@@ -34,7 +34,7 @@ header {
 .glowRed {
   height: 200px;
   width: 200px;
-  background-color: #eb4661;
+  background-color: #FF5333;
   border-top-right-radius: 400px;
   box-shadow: 0px 0px 29px 12px;
 }
@@ -50,7 +50,7 @@ header {
 .glowBlue {
   height: 200px;
   width: 200px;
-  background-color: #00BFFF;
+  background-color: #4D4DFF;
   border-bottom-right-radius: 400px;
   box-shadow: 0px 0px 29px 12px;
 }
@@ -65,11 +65,16 @@ header {
 .glowYellow {
   height: 200px;
   width: 200px;
-  background-color: gold;
+  background-color: #EBEB00;
   border-bottom-left-radius: 400px;
   box-shadow: 0px 0px 29px 12px;
 }
 
 #container > table td {
   cursor: pointer;
+}
+
+#otis {
+    list-style-type: none;
+    font-family: Arial;
 }

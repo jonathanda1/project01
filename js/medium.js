@@ -142,9 +142,9 @@ function blinkYellow(pauseTime) {
 }
 
 function incorrectAnswer() {
-  $('#object').fadeIn(2000);
+  $('#object').fadeIn(2500);
 }
 
 $("#object").click(function() {
-    window.location.href='easy.html';
+    window.location.href='medium.html';
 });

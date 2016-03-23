@@ -146,6 +146,6 @@ function incorrectAnswer() {
 }
 
 $("#object").click(function() {
-    window.location.href='easy.html';
+    window.location.href='difficult.html';
 });
 

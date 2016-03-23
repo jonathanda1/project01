@@ -31,17 +31,26 @@ header {
   font-size: 30px;
   color: white;
   display: none;
-  background-image: url("http://images.rapgenius.com/e2e171799293dcad7144ea4bd81477b6.550x303x23.gif");
+  background-image: url("http://45.media.tumblr.com/tumblr_lluciqc51F1qixleeo1_250.gif");
+  background-size: cover;
   font-family: Arial;
   opacity: 0.9;
   width: 50%;
-  height:65%;
+  height: 65%;
   z-index: 3;
   position: absolute;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
+}
+
+p {
+  position:absolute;
+  width:100%;
+  bottom:0;
+  text-align:center;
+
 }
 
 .squaresGreen {

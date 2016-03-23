@@ -46,7 +46,7 @@ $('#play').click(function(e) {
     }
   }
   setTimeout(function() {
-      alert("Your turn. Ready?"); }, 10000)
+      ready(); }, 10000)
 });
 
 ///////////////////////////////////////////////////////////////////////
@@ -54,15 +54,14 @@ function checkLoss (color) {
   if (color === randomSequence[playerTurn]) {
     console.log("correct")
   } else {
-    alert("You probably won't get it. Try again?");
-    window.location.reload(true);
+    incorrectAnswer();
   }
   playerTurn++
 }
 
 function winLogic () {
   if (playerTurn === randomSequence.length) {
-    alert("You probably got lucky. You win..")
+    youWin();
   }
 }
 
@@ -140,3 +139,24 @@ function blinkYellow(pauseTime) {
     }, 400);
   }, pauseTime);
 }
+
+function incorrectAnswer() {
+  $('#object').fadeIn(2000);
+}
+
+$("#object").click(function() {
+    window.location.href='simon.html';
+});
+
+function ready() {
+  $('#yourTurn').fadeIn(1000);
+  $('#yourTurn').fadeOut(500);
+}
+
+function youWin() {
+  $('#youWin').fadeIn(2000);
+}
+
+$('#youWin').click(function() {
+  window.location.href='medium.html'
+});

@@ -14,6 +14,51 @@ body {
   justify-content: space-around;
 }
 
+#object{
+  display: none;
+  text-align:center;
+  font-size: 50px;
+  font-family: Arial;
+  color: black;
+  z-index: 3;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#yourTurn {
+  display: none;
+  text-align:center;
+  font-size: 50px;
+  font-family: Arial;
+  color: black;
+  z-index: 3;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#youWin {
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  display: none;
+  background-image: url("http://i.kinja-img.com/gawker-media/image/upload/s--YRw3gF7f--/csyyqoofz2n1v031ubc0.gif");
+  font-family: Arial;
+  width: 50%;
+  height:65%;
+  z-index: 3;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .squaresGreen {
   height: 200px;
   width: 200px;

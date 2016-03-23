@@ -58,6 +58,24 @@ header {
   margin-right: auto;
 }
 
+#youWin {
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  display: none;
+  background-image: url("http://reactiongif.org/wp-content/uploads/GIF/2014/08/GIF--Approve-Approval-Like-Likes-Awesome-Nice-one-Good-one-thumbs-up-Ty-Burrell-Phil-Dunphy-Modern-Family-GIF.gif");
+  background-size: cover;
+  font-family: Arial;
+  width: 50%;
+  height:65%;
+  z-index: 3;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 p {
   position:absolute;
   width:100%;

@@ -61,8 +61,7 @@ function checkLoss (color) {
 
 function winLogic () {
   if (playerTurn === randomSequence.length) {
-    alert("Ready for the next level?");
-    window.location.href='difficult.html';
+    youWin();
   }
 }
 
@@ -153,3 +152,11 @@ function ready() {
   $('#yourTurn').fadeIn(500);
   $('#yourTurn').fadeOut(500);
 }
+
+function youWin() {
+  $('#youWin').fadeIn(2000);
+}
+
+$('#youWin').click(function() {
+  window.location.href='difficult.html'
+});

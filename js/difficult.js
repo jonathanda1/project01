@@ -61,8 +61,7 @@ function checkLoss (color) {
 
 function winLogic () {
   if (playerTurn === randomSequence.length) {
-    alert("You're too good! You broke the game (caution:epilepsy)");
-    window.location.href='insane.html';
+    youWin();
   }
 }
 
@@ -153,4 +152,12 @@ function ready() {
   $('#yourTurn').fadeIn(500);
   $('#yourTurn').fadeOut(500);
 }
+
+function youWin() {
+  $('#youWin').fadeIn(2000);
+}
+
+$('#youWin').click(function() {
+  window.location.href='insane.html'
+});
 

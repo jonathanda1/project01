@@ -65,8 +65,7 @@ function checkLoss (color) {
 ///// IF PLAYERTURN = END OF SEQ U WIN
 function winLogic () {
   if (playerTurn === randomSequence.length) {
-    alert("You win. Continue?");
-    window.location.href='medium.html'
+    youWin();
   }
 }
 
@@ -159,3 +158,11 @@ function ready() {
   $('#yourTurn').fadeIn(500);
   $('#yourTurn').fadeOut(500);
 }
+
+function youWin() {
+  $('#youWin').fadeIn(2000);
+}
+
+$('#youWin').click(function() {
+  window.location.href='medium.html'
+});

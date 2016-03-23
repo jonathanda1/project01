@@ -17,7 +17,7 @@ body {
 .squaresGreen {
   height: 200px;
   width: 200px;
-  background-color: green;
+  background-color: blue;
   border-top-right-radius: 100px;
 }
 
@@ -32,7 +32,7 @@ body {
 .squaresRed {
   height: 200px;
   width: 200px;
-  background-color: red;
+  background-color: yellow;
   border-top-left-radius: 100px;
 }
 
@@ -47,7 +47,7 @@ body {
 .squaresBlue {
   height: 200px;
   width: 200px;
-  background-color: blue;
+  background-color: green;
   border-bottom-left-radius: 100px;
 
 }
@@ -63,7 +63,7 @@ body {
 .squaresYellow {
   height: 200px;
   width: 200px;
-  background-color: yellow;
+  background-color: red;
   border-bottom-right-radius: 100px;
 }
 

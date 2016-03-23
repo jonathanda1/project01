@@ -1,6 +1,6 @@
 console.log("hi")
 
-var sequenceLength = 12;
+var sequenceLength = 8;
 var playerTurn     = 0;
 var randomSequence = [];
 
@@ -46,7 +46,7 @@ $('#play').click(function(e) {
     }
   }
   setTimeout(function() {
-      alert("Your turn. Ready?"); }, 10000)
+      alert("Your turn. Ready?"); }, 6700)
 });
 
 ///////////////////////////////////////////////////////////////////////
@@ -54,16 +54,15 @@ function checkLoss (color) {
   if (color === randomSequence[playerTurn]) {
     console.log("correct")
   } else {
-    alert("Nice try.Try again?");
-    window.location.reload(true);
+    incorrectAnswer();
   }
   playerTurn++
 }
 
 function winLogic () {
   if (playerTurn === randomSequence.length) {
-    alert("Wow. You win! Initiate brkn m???? (caution:epilepsy)");
-    window.location.href='insane.js';
+    alert("You're too good! You broke the game (caution:epilepsy)");
+    window.location.href='insane.html';
   }
 }
 
@@ -141,3 +140,12 @@ function blinkYellow(pauseTime) {
     }, 600);
   }, pauseTime);
 }
+
+function incorrectAnswer() {
+  $('#object').fadeIn(2000);
+}
+
+$("#object").click(function() {
+    window.location.href='easy.html';
+});
+

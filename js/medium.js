@@ -1,6 +1,6 @@
 console.log("hi")
 
-var sequenceLength = 8;
+var sequenceLength = 6;
 var playerTurn     = 0;
 var randomSequence = [];
 
@@ -46,7 +46,7 @@ $('#play').click(function(e) {
     }
   }
   setTimeout(function() {
-      alert("Your turn. Ready?"); }, 7000)
+      alert("Your turn. Ready?"); }, 5250)
 });
 
 ///////////////////////////////////////////////////////////////////////
@@ -54,15 +54,14 @@ function checkLoss (color) {
   if (color === randomSequence[playerTurn]) {
     console.log("correct")
   } else {
-    alert("Cmon...Try again?");
-    window.location.reload(true);
+    incorrectAnswer();
   }
   playerTurn++
 }
 
 function winLogic () {
   if (playerTurn === randomSequence.length) {
-    alert("That was ok. You win! Want to try difficult?");
+    alert("Ready for the next level?");
     window.location.href='difficult.html';
   }
 }
@@ -141,3 +140,11 @@ function blinkYellow(pauseTime) {
     }, 600);
   }, pauseTime);
 }
+
+function incorrectAnswer() {
+  $('#object').fadeIn(2000);
+}
+
+$("#object").click(function() {
+    window.location.href='easy.html';
+});

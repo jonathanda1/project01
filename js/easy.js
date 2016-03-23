@@ -4,6 +4,7 @@ var sequenceLength = 4;
 var playerTurn     = 0;
 var randomSequence = [];
 
+///// button click has three functions within: blink, checkLoss, winLogic
 $('.squaresGreen').click(function() {
   blinkGreen();
   checkLoss("green");
@@ -50,25 +51,27 @@ $('#play').click(function(e) {
 });
 
 ///////////////////////////////////////////////////////////////////////
+
+//// IF COLOR IN ARRAY = PLAYER CHOICE COLOR IN SAME ARRAY POSITION THEN CORRECT
 function checkLoss (color) {
   if (color === randomSequence[playerTurn]) {
     console.log("correct")
   } else {
-    alert("Wrong :( Try again?");
-    window.location.reload(true);
+    incorrectAnswer();
   }
   playerTurn++
 }
 
+///// IF PLAYERTURN = END OF SEQ U WIN
 function winLogic () {
   if (playerTurn === randomSequence.length) {
-    alert("That was easy. You win! Want to move on?");
+    alert("You win. Continue?");
     window.location.href='medium.html'
   }
 }
 
 
-
+////// HOW COMP PICKS COLOR TO PUT INTO ARRAY
 function randomColor() {
   var randomNumber = Math.random();
   if (randomNumber < 0.25) {
@@ -82,7 +85,7 @@ function randomColor() {
   }
 }
 
-
+////// HOW TO CREATE COMP ARRAY
 function generateRandomSequence(sequenceLength) {
   var randomSequence = [];
   for (var i = 0; i < sequenceLength; i++) {
@@ -91,7 +94,7 @@ function generateRandomSequence(sequenceLength) {
     return randomSequence;
 }
 
-
+////// BUTTONS BLINK
 function blinkGreen(pauseTime) {
   // if no pause time is given, we will default to 500ms
   if (pauseTime == undefined) {
@@ -143,3 +146,11 @@ function blinkYellow(pauseTime) {
     }, 600);
   }, pauseTime);
 }
+
+function incorrectAnswer() {
+  $('#object').fadeIn(2000);
+}
+
+$("#object").click(function() {
+    window.location.href='easy.html';
+});

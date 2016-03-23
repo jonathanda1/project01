@@ -46,7 +46,7 @@ $('#play').click(function(e) {
     }
   }
   setTimeout(function() {
-      alert("Your turn. Ready?"); }, 5250)
+      ready(); }, 5150)
 });
 
 ///////////////////////////////////////////////////////////////////////
@@ -148,3 +148,8 @@ function incorrectAnswer() {
 $("#object").click(function() {
     window.location.href='medium.html';
 });
+
+function ready() {
+  $('#yourTurn').fadeIn(500);
+  $('#yourTurn').fadeOut(500);
+}

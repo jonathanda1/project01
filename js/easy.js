@@ -46,8 +46,8 @@ $('#play').click(function(e) {
       blinkYellow(pauseTime);
     }
   }
-  setTimeout(function() {
-      alert("Your turn. Ready?"); }, 4000)
+    setTimeout(function() {
+      ready(); }, 3750)
 });
 
 ///////////////////////////////////////////////////////////////////////
@@ -154,3 +154,8 @@ function incorrectAnswer() {
 $("#object").click(function() {
     window.location.href='easy.html';
 });
+
+function ready() {
+  $('#yourTurn').fadeIn(500);
+  $('#yourTurn').fadeOut(500);
+}

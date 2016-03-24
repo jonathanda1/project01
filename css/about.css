@@ -2,25 +2,52 @@ h1 {
   font-family: Arial;
   font-size: 50px;
   text-align: center;
+  flex: 1 100%;
+}
+
+h2 {
+  font-family: sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+h3 {
+  font-family: sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+div {
+  border: 1px solid black;
+  border-radius: 25px;
+  margin: 5px;
+}
+
+.column {
+  width: 50%;
 }
 
 #otis {
-    list-style-type: none;
-    font-family: Arial;
+  list-style-type: none;
+  font-family: Arial;
 }
 
 #container {
   display:flex;
-  flex-wrap: wrap;
-
+  justify-content: space-between;
 }
 
 #about {
-  text-align: left;
-  font-family: arial;
+  vertical-align: center;
+  font-family: Arial;
+  padding: 5px 10px;
+  font-size: 16px;
+  height: 50%;
 }
 
-p {
-  font: arial;
-  text-align: center;
+#iono {
+  font-family: Arial;
+  padding: 5px 10px;
+  height: 50%;
 }
+

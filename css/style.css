@@ -89,3 +89,7 @@ button {
     list-style-type: none;
     font-family: Arial;
 }
+
+a {
+    color: white;
+}

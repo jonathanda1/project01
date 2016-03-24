@@ -4,27 +4,22 @@ var sequenceLength = 4;
 var playerTurn     = 0;
 var randomSequence = [];
 var round          = 0;
-/*
+
 $('.squaresGreen').click(function() {
-  blinkGreen();
-  checkLoss("green");
-});
+  window.location.href='easy.html'});
 
 $('.squaresRed').click(function() {
-  blinkRed();
-  checkLoss("red");
+  window.location.href='easy.html'
 });
 
 $('.squaresBlue').click(function() {
-  blinkBlue();
-  checkLoss("blue");
+  window.location.href='easy.html'
 });
 
 $('.squaresYellow').click(function() {
-  blinkYellow();
-  checkLoss("yellow");
+  window.location.href='easy.html';
 });
-*/
+
 $('#easy').click(function () {
   window.location.href='easy.html'
 })
